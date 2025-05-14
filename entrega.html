@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Acta de Entrega de Equipos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      margin: 2cm;
+
+      @top-center {
+        content: element(header);
+      }
+
+      @bottom-left {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 11pt;
+        content: 'F-IFR-002';
+      }
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 11pt;
+      text-align: justify;
+    }
+
+    header {
+      position: running(header);
+      margin-bottom: 70px;
+      margin-top: 80px;
+    }
+
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .header-table td {
+      border: 1px solid black;
+      padding: 10px;
+      vertical-align: middle;
+      font-weight: bold;
+    }
+
+    .header-table td.center {
+      text-align: center;
+      font-size: 14pt;
+    }
+
+    .header-table td.right {
+      font-size: 11pt;
+    }
+
+    footer {
+      position: running(footer);
+      font-size: 11pt;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .firmas {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+    }
+
+    .firma {
+      width: 45%;
+      text-align: left;
+    }
+
+    .firma hr {
+      border: none;
+      border-top: 1px solid black;
+      margin: 40px 0 10px;
+    }
+
+    .firma-datos {
+      font-size: 9pt;
+      font-weight: normal;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    
+
+    .linea {
+      display: inline-block;
+      border-bottom: 1px solid black;
+      width: 200px;
+    }
+
+    .linea-corta {
+      display: inline-block;
+      border-bottom: 1px solid black;
+      width: 150px;
+    }
+
+    .linea-direccion {
+      display: inline-block;
+      border-bottom: 1px solid black;
+      width: 235px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <table class="header-table">
+      <tr>
+        <td style="width: 25%;">
+          <img src="logo.png" alt="Horbath Technologies" style="height: 40px;">
+        </td>
+        <td class="center" style="width: 50%;">
+          ACTA ENTREGA DE EQUIPOS<br>
+          No. {{numero_documento}}
+        </td>
+        <td class="right" style="width: 25%;">
+          Versión: 002
+          <hr style="border: none; border-top: 1px solid black; width: 100%; margin-left: 0; margin-right: 0;">
+          Fecha: 2024-08-28
+        </td>        
+      </tr>
+    </table>
+  </header>
+
+  <p style="text-align: right;"><strong>Fecha: </strong>{{fecha_actual}}</p>
+
+  <h3>1. DATOS DE IDENTIFICACIÓN DEL USUARIO</h3>
+  <ul style="list-style: none; padding-left: 0;">
+    <li><strong>Nombre completo:</strong></li>
+    <li><strong>Tipo documento identificación:</strong></li>
+    <li><strong>Número de documento:</strong></li>
+    <li><strong>Tipo vinculación:</strong></li>
+    <li><strong>Dependencia:</strong></li>
+    <li><strong>Sede:</strong></li>
+    <li><strong>Teléfono/extensión:</strong></li>
+  </ul>
+
+  <p>Con la presente (Coordinación, dependencia o Gerencia) le hace entrega del equipo portátil con las siguientes características:</p>
+
+  <table>
+    <tr>
+      <td><strong>Marca / Modelo:</strong></td>
+      <td>{{marca_modelo}}</td>
+    </tr>
+    <tr>
+      <td><strong>Serial:</strong></td>
+      <td>{{serial}}</td>
+    </tr>
+    <tr>
+      <td><strong>Procesador:</strong></td>
+      <td>{{procesador}}</td>
+    </tr>
+    <tr>
+      <td><strong>Memoria:</strong></td>
+      <td>{{ram}}</td>
+    </tr>
+    <tr>
+      <td><strong>Disco duro:</strong></td>
+      <td>{{disco}}</td>
+    </tr>
+    <tr>
+      <td><strong>Cargador:</strong></td>
+      <td>Sí</td>
+    </tr>
+    <tr>
+      <td><strong>Batería:</strong></td>
+      <td>Sí</td>
+    </tr>
+    <tr>
+      <td><strong>Estado del equipo:</strong></td>
+      <td>{{estado}}</td>
+    </tr>
+    <tr>
+      <td><strong>Nº. Inventario / Nombre de equipo:</strong></td>
+      <td>{{inventario}}</td>
+    </tr>
+  </table>
+
+  <p>El equipo y los accesorios antes relacionados pertenecen a {{empresa_nombre}}, por lo que este le fue asignado
+    para uso única y exclusivamente laboral, debiendo el usuario abstenerse de instalar o permitir que terceros ajenos
+    al grupo interno de trabajo instale software no autorizado por el empleador.</p>
+
+  <p>Al momento de realizada esta entrega, el equipo se encuentra en buen estado físico y de funcionamiento. El usuario
+    se compromete a devolver el equipo en las mismas condiciones y con los mismos accesorios entregados en el momento
+    que sea solicitado por el empleador.</p>
+
+  <p>El usuario que recibe el (los) elementos aquí relacionados se hace responsable por su buen uso, manejo y custodia.
+    Por lo tanto, al recibir el equipo detallado en esta acta, asume plena responsabilidad por su uso en el lugar
+    autorizado por HORBATH TECHNOLOGIES SAS para prestar los servicios y/o registrado en la base de datos del área de
+    gestión humana de la compañía para quien sea autorizado en trabajo remoto.</p>
+
+  <p>El usuario no está autorizado para viajar con el equipo sin previa autorización del empleador; en caso de pérdida
+    bajo esta circunstancia, desde ya el usuario autoriza a descontar de sus Honorarios y/o salario el valor de la
+    reposición del equipo.</p>
+  <br><br>
+  <p>Los daños causados que no provengan del deterioro natural del uso legítimo, negligencia del usuario o de otra causa
+    injustificada deberán ser asumidos por el usuario y desde ya autoriza el descuento de estos de su salario y/o
+    honorarios.</p>
+
+  <p>Asimismo, el usuario se compromete a notificar de manera inmediata a la compañía cualquier incidente que afecte la
+    integridad del equipo. En caso de hurto el usuario deberá presentar de manera inmediata la denuncia correspondiente
+    y notificar al empleador.</p>
+
+  <p>Yo, <span class="linea"></span>, identificado con CC Nº <span class="linea-corta"></span>, autorizo a HORBATH
+    TECHNOLOGIES SAS, a descontar de
+    mis Honorarios, salario y/o liquidación de prestaciones, el valor correspondiente, ya sea por daño técnicamente
+    comprobable debido al mal uso o negligencia, extravío o no devolución del equipo.</p>
+
+  <p>Declaro que mi dirección de residencia es: <span class="linea-direccion"></span></p>
+
+  <!-- FIRMAS -->
+  <div class="firmas">
+    <div class="firma">
+      Quién recibe:
+      <hr>
+      <strong>{{entrega_nombre}}</strong><br>
+      CC:
+    </div>
+    <div class="firma">
+      Quién entrega:
+      <hr>
+      <strong>Jonathan David Santos Arrieta</strong><br>
+      <div class="firma-datos">
+        <strong>Infraestructura TI</strong><br>
+        Calle 77 B # 57 – 103, Edificio Green Towers<br>
+        Barranquilla - Colombia<br>
+        Tel: (605) 351 73 30 – (605) 327 73 71
+      </div>
+    </div>
+    
+  </div>
+
+</body>
+
+</html>
